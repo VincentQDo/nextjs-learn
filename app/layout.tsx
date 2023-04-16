@@ -1,4 +1,6 @@
+import Footer from "./footer";
 import "./globals.css";
+import Navbar from "./navbar";
 
 export const metadata = {
   title: "Blog test app",
@@ -8,7 +10,15 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <main>
+          <Navbar></Navbar>
+          <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+            <div className="bg-gray-800 shadow-xl rounded-lg p-6 w-full max-w-md">{children}</div>
+          </div>
+          <Footer></Footer>
+        </main>
+      </body>
     </html>
   );
 }
